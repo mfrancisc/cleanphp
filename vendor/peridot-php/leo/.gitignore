@@ -1,0 +1,10 @@
+.idea
+vendor
+composer.lock
+*.swp
+.DS_Store
+tmp
+docs
+css
+img
+build
