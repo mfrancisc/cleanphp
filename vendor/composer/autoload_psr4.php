@@ -6,5 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+    'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Symfony\\Component\\Config\\' => array($vendorDir . '/symfony/config'),
+    'Peridot\\Scope\\' => array($vendorDir . '/peridot-php/peridot-scope/src'),
+    'Peridot\\Plugin\\Watcher\\' => array($vendorDir . '/peridot-php/peridot-watcher-plugin/src'),
+    'Peridot\\Plugin\\Prophecy\\' => array($vendorDir . '/peridot-php/peridot-prophecy-plugin/src'),
+    'Peridot\\Leo\\' => array($vendorDir . '/peridot-php/leo/src'),
+    'Peridot\\' => array($vendorDir . '/peridot-php/peridot/src'),
+    'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'CleanPhp\\Invoicer\\' => array($baseDir . '/src'),
 );
