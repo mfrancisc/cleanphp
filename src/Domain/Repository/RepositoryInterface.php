@@ -13,7 +13,7 @@ interface RepositoryInterface
 
     public function getAll();
 
-    public function persist($entity);
+    public function persist(Abstract $entity);
 
     public function begin();
 
