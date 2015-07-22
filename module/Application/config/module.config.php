@@ -6,6 +6,8 @@
  * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
+use CleanPhp\Invoicer\Service\InputFilter\CustomerInputFilter;
+use Zend\Stdlib\Hydrator\ClassMethods;
 
 return array(
     'router' => array(
@@ -29,6 +31,18 @@ return array(
                         'action' => 'index',
                     ),
                 ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'create' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/new',
+                            'defaults' => array(
+                                'action' => 'new',
+                            ),
+                        )
+                    ),
+                )
             ),
             'orders' => array(
                 'type' => 'Segment',
@@ -106,7 +120,9 @@ return array(
         'factories' => array(
             'Application\Controller\Customers' => function ($sm) {
                 return new \Application\Controller\CustomersController(
-                    $sm->getServiceLocator()->get('CustomerTable')
+                    $sm->getServiceLocator()->get('CustomerTable'),
+                    new CustomerInputFilter(),
+                    new ClassMethods()
                 );
             },
         ),
@@ -126,6 +142,11 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
+    ),
+    'view_helpers' => array(
+        'invokables' => array(
+            'validationErrors' => 'Application\View\Helper\ValidationErrors',
+        )
     ),
     // Placeholder for console routes
     'console' => array(
