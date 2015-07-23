@@ -7,7 +7,9 @@
  * Time: 07:30
  */
 namespace Application\View\Helper;
+
 use Zend\View\Helper\AbstractHelper;
+use Vnn\Keyper\Keyper;
 
 class ValidationErrors extends AbstractHelper
 {
@@ -26,10 +28,7 @@ class ValidationErrors extends AbstractHelper
         if (!isset($this->getView()->errors)) {
             return false;
         }
-        $errors = $this->getView()->errors;
-        if (isset($errors[$element])) {
-            return $errors[$element];
-        }
-        return false;
+        $errors = Keyper::create($this->getView()->errors);
+        return $errors->get($element) ?: false;
     }
 }

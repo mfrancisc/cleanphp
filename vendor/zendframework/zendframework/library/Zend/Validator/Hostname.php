@@ -947,7 +947,7 @@ class Hostname extends AbstractValidator
      * (.CL) Chile http://www.iana.org/domains/idn-tables/tables/cl_latn_1.0.html
      * (.COM) International http://www.verisign.com/information-services/naming-services/internationalized-domain-names/index.html
      * (.DE) Germany http://www.denic.de/en/domains/idns/liste.html
-     * (.DK) Danmark http://www.dk-hostmaster.dk/index.php?id=151
+     * (.DK) Danmark http://www.dk-hostmaster.dk/index.phtml?id=151
      * (.EE) Estonia https://www.iana.org/domains/idn-tables/tables/pl_et-pl_1.0.html
      * (.ES) Spain https://www.nic.es/media/2008-05/1210147705287.pdf
      * (.FI) Finland http://www.ficora.fi/en/index/palvelut/fiverkkotunnukset/aakkostenkaytto.html
@@ -966,7 +966,7 @@ class Hostname extends AbstractValidator
      * (.NET) International http://www.verisign.com/information-services/naming-services/internationalized-domain-names/index.html
      * (.NO) Norway http://www.norid.no/domeneregistrering/idn/idn_nyetegn.en.html
      * (.NU) Niue http://www.worldnames.net/
-     * (.ORG) International http://www.pir.org/index.php?db=content/FAQs&tbl=FAQs_Registrant&id=2
+     * (.ORG) International http://www.pir.org/index.phtml?db=content/FAQs&tbl=FAQs_Registrant&id=2
      * (.PE) Peru https://www.nic.pe/nuevas_politicas_faq_2.php
      * (.PL) Poland http://www.dns.pl/IDN/allowed_character_sets.pdf
      * (.PR) Puerto Rico http://www.nic.pr/idn_rules.asp
@@ -978,7 +978,7 @@ class Hostname extends AbstractValidator
      * (.SJ) Svalbard and Jan Mayen http://www.norid.no/domeneregistrering/idn/idn_nyetegn.en.html
      * (.TH) Thailand http://www.iana.org/domains/idn-tables/tables/th_th-th_1.0.html
      * (.TM) Turkmenistan http://www.nic.tm/TM-IDN-Policy.pdf
-     * (.TR) Turkey https://www.nic.tr/index.php
+     * (.TR) Turkey https://www.nic.tr/index.phtml
      * (.UA) Ukraine http://www.iana.org/domains/idn-tables/tables/ua_cyrl_1.2.html
      * (.VE) Venice http://www.iana.org/domains/idn-tables/tables/ve_es_1.0.html
      * (.VN) Vietnam http://www.vnnic.vn/english/5-6-300-2-2-04-20071115.htm#1.%20Introduction

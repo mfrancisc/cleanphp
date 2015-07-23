@@ -43,7 +43,6 @@ class CustomersController extends AbstractActionController
         $customer = $id ? $this->customerRepository->getById($id) : new Customer();
 
         $viewModel = new ViewModel();
-//        $customer = new Customer();
 
 
         if ($this->getRequest()->isPost()) {

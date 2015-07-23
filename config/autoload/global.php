@@ -19,7 +19,7 @@ use CleanPhp\Invoicer\Persistence\Zend\DataTable\InvoiceTable;
 use CleanPhp\Invoicer\Persistence\Zend\DataTable\OrderTable;
 use CleanPhp\Invoicer\Persistence\Zend\TableGateway\TableGatewayFactory;
 use Zend\Stdlib\Hydrator\ClassMethods;
-
+use CleanPhp\Invoicer\Persistence\Hydrator\OrderHydrator;
 return array('service_manager' => array(
     'factories' => array(
         'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
@@ -47,9 +47,15 @@ return array('service_manager' => array(
                 $hydrator
             );
         },
+        'OrderHydrator' => function ($sm) {
+            return new OrderHydrator(
+                new ClassMethods(),
+                $sm->get('CustomerTable')
+            );
+        },
         'OrderTable' => function ($sm) {
             $factory = new TableGatewayFactory();
-            $hydrator = new ClassMethods();
+            $hydrator = $sm->get('OrderHydrator');
             return new OrderTable($factory->createGateway(
                 $sm->get('Zend\Db\Adapter\Adapter'), $hydrator,
                 new Order(),

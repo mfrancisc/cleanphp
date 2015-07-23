@@ -7,6 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 use CleanPhp\Invoicer\Service\InputFilter\CustomerInputFilter;
+use CleanPhp\Invoicer\Service\InputFilter\OrderInputFilter;
 use Zend\Stdlib\Hydrator\ClassMethods;
 
 return array(
@@ -42,7 +43,8 @@ return array(
                             ),
                             'defaults' => array(
                                 'action' => 'new-or-edit',
-                            ),)
+                            ),
+                        ),
                     ),
                     'edit' => array(
                         'type' => 'Segment',
@@ -53,23 +55,16 @@ return array(
                             ),
                             'defaults' => array(
                                 'action' => 'new-or-edit',
-                            ),)
-                    ),
-                    'create' => array(
-                        'type' => 'Segment',
-                        'options' => array(
-                            'route' => '/new',
-                            'defaults' => array(
-                                'action' => 'new',
                             ),
-                        )
+                        ),
                     ),
-                )
+
+                ),
             ),
             'orders' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/orders',
+                    'route' => '/orders[/:action[/:id]]',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Orders',
                         'action' => 'index',
@@ -145,6 +140,13 @@ return array(
                     $sm->getServiceLocator()->get('CustomerTable'),
                     new CustomerInputFilter(),
                     new ClassMethods()
+                );
+            },
+            'Application\Controller\Orders' => function ($sm) {
+                return new \Application\Controller\OrdersController(
+                    $sm->getServiceLocator()->get('OrderTable'),
+                    $sm->getServiceLocator()->get('CustomerTable'),
+                    new OrderInputFilter(), $sm->getServiceLocator()->get('OrderHydrator')
                 );
             },
         ),
