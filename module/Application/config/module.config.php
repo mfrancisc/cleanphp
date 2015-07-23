@@ -33,6 +33,28 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
+                    'new' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/new',
+                            'constraints' => array(
+                                'id' => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'action' => 'new-or-edit',
+                            ),)
+                    ),
+                    'edit' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/edit/:id',
+                            'constraints' => array(
+                                'id' => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'action' => 'new-or-edit',
+                            ),)
+                    ),
                     'create' => array(
                         'type' => 'Segment',
                         'options' => array(

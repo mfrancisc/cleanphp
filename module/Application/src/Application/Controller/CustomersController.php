@@ -15,6 +15,7 @@ use CleanPhp\Invoicer\Domain\Entity\Customer;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\StdLib\Hydrator\HydratorInterface;
 use Zend\View\Model\ViewModel;
+
 class CustomersController extends AbstractActionController
 {
     protected $customerRepository;
@@ -36,10 +37,13 @@ class CustomersController extends AbstractActionController
         ];
     }
 
-    public function newAction()
+    public function newOrEditAction()
     {
+        $id = $this->params()->fromRoute('id');
+        $customer = $id ? $this->customerRepository->getById($id) : new Customer();
+
         $viewModel = new ViewModel();
-        $customer = new Customer();
+//        $customer = new Customer();
 
 
         if ($this->getRequest()->isPost()) {
@@ -51,7 +55,7 @@ class CustomersController extends AbstractActionController
                     ->persist($customer)
                     ->commit();
                 $this->flashMessenger()->addSuccessMessage('Customer Saved');
-                $this->redirect()->toUrl('/customers');
+                $this->redirect()->toUrl('/customers/edit/' . $customer->getId());
             } else {
                 $this->hydrator->hydrate(
                     $this->params()->fromPost(),
