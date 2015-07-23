@@ -77,6 +77,7 @@ return array(
                     'route' => '/invoices',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Invoices',
+                        'action'=> 'index',
                     ),
                 ),
             ),
@@ -147,6 +148,11 @@ return array(
                     $sm->getServiceLocator()->get('OrderTable'),
                     $sm->getServiceLocator()->get('CustomerTable'),
                     new OrderInputFilter(), $sm->getServiceLocator()->get('OrderHydrator')
+                );
+            },
+            'Application\Controller\Invoices' => function ($sm) {
+                return new \Application\Controller\InvoicesController (
+                    $sm->getServiceLocator()->get('InvoiceTable')
                 );
             },
         ),
