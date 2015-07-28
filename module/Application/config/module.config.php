@@ -74,10 +74,10 @@ return array(
             'invoices' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/invoices',
+                    'route' => 'invoices[/:action[/:id]]',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Invoices',
-                        'action'=> 'index',
+                        'action' => 'index',
                     ),
                 ),
             ),
@@ -152,7 +152,8 @@ return array(
             },
             'Application\Controller\Invoices' => function ($sm) {
                 return new \Application\Controller\InvoicesController (
-                    $sm->getServiceLocator()->get('InvoiceTable')
+                    $sm->getServiceLocator()->get('InvoiceTable'),
+                    $sm->getServiceLocator()->get('OrderTable')
                 );
             },
         ),
