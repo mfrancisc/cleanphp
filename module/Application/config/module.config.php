@@ -9,6 +9,8 @@
 use CleanPhp\Invoicer\Service\InputFilter\CustomerInputFilter;
 use CleanPhp\Invoicer\Service\InputFilter\OrderInputFilter;
 use Zend\Stdlib\Hydrator\ClassMethods;
+use CleanPhp\Invoicer\Domain\Service\InvoicingService;
+use CleanPhp\Invoicer\Domain\Factory\InvoiceFactory;
 
 return array(
     'router' => array(
@@ -74,7 +76,7 @@ return array(
             'invoices' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => 'invoices[/:action[/:id]]',
+                    'route' => '/invoices[/:action[/:id]]',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Invoices',
                         'action' => 'index',
@@ -153,7 +155,11 @@ return array(
             'Application\Controller\Invoices' => function ($sm) {
                 return new \Application\Controller\InvoicesController (
                     $sm->getServiceLocator()->get('InvoiceTable'),
-                    $sm->getServiceLocator()->get('OrderTable')
+                    $sm->getServiceLocator()->get('OrderTable'),
+                    new InvoicingService(
+                        $sm->getServiceLocator()->get('OrderTable'),
+                        new InvoiceFactory())
+
                 );
             },
         ),
