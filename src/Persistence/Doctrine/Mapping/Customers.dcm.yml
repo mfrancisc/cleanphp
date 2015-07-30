@@ -1,0 +1,14 @@
+This file, CleanPhp.Invoicer.Domain.Entity.Customer.dcm.yml dictates mapping information for the Customer entity:
+CleanPhp\Invoicer\Domain\Entity\Customer:
+  type: entity
+  table: customers
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:
+    name:
+      length: 100
+    email:
+      length: 50
