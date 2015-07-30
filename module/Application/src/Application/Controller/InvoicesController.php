@@ -10,8 +10,8 @@ namespace Application\Controller;
 
 use CleanPhp\Invoicer\Domain\Repository\InvoiceRepositoryInterface;
 use CleanPhp\Invoicer\Domain\Repository\OrderRepositoryInterface;
-use Zend\Mvc\Controller\AbstractActionController;
 use CleanPhp\Invoicer\Domain\Service\InvoicingService;
+use Zend\Mvc\Controller\AbstractActionController;
 
 class InvoicesController extends AbstractActionController
 {
@@ -27,12 +27,18 @@ class InvoicesController extends AbstractActionController
         $this->invoicing = $invoicing;
     }
 
-    public
-    function indexAction()
+    public function indexAction()
     {
         $invoices = $this->invoiceRepository->getAll();
         return [
             'invoices' => $invoices
+        ];
+    }
+
+    public function generateAction()
+    {
+        return [
+            'orders' => $this->orderRepository->getUninvoicedOrders()
         ];
     }
 
