@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f12138f-bb5a-409f-833b-30bb9812ec8d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Persistence/Doctrine/Repository/RepositoryFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/autoload/db.global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.config.php" afterPath="$PROJECT_DIR$/config/application.config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/autoload/global.php" afterPath="$PROJECT_DIR$/config/autoload/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/config/module.config.php" afterPath="$PROJECT_DIR$/module/Application/config/module.config.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Persistence/Hydrator/InvoiceHydrator.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Persistence/Hydrator/Strategy/DateStrategy.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Persistence/Hydrator/OrderHydrator.php" afterPath="$PROJECT_DIR$/src/Persistence/Hydrator/OrderHydrator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/specs/hydrator/order.spec.php" afterPath="$PROJECT_DIR$/specs/hydrator/order.spec.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cleanphp.iws" />
@@ -33,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="module.config.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="module.config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Application/config/module.config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5766773">
+            <state vertical-scroll-proportion="-15.041667">
               <caret line="159" column="70" selection-start-line="159" selection-start-column="70" selection-end-line="159" selection-end-column="70" />
               <folding>
                 <element signature="e#329#391#0#PHP" expanded="true" />
@@ -45,22 +40,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvoiceRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Persistence/Doctrine/Repository/InvoiceRepository.php">
+      <file leaf-file-name="order.spec.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/specs/hydrator/order.spec.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-20.041666">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#6#51#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Customers.dcm.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Persistence/Doctrine/Mapping/Customers.dcm.yml">
+      <file leaf-file-name="OrderHydrator.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Persistence/Hydrator/OrderHydrator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-              <folding />
+            <state vertical-scroll-proportion="0.78434503">
+              <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
+              <folding>
+                <element signature="e#7#89#0#PHP" expanded="true" />
+                <element signature="e#141#186#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,8 +184,6 @@
         <option value="$PROJECT_DIR$/src/Service/InputFilter/OrderInputFilter.php" />
         <option value="$PROJECT_DIR$/module/Application/view/application/orders/new.phtml" />
         <option value="$PROJECT_DIR$/module/Application/src/Application/Controller/OrdersController.php" />
-        <option value="$PROJECT_DIR$/specs/hydrator/order.spec.php" />
-        <option value="$PROJECT_DIR$/src/Persistence/Hydrator/OrderHydrator.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Application/View/Helper/ValidationErrors.php" />
         <option value="$PROJECT_DIR$/specs/hydrator/strategy/date.spec.php" />
         <option value="$PROJECT_DIR$/src/Persistence/Hydrator/Strategy/DateStrategy.php" />
@@ -209,6 +207,8 @@
         <option value="$PROJECT_DIR$/src/Persistence/Doctrine/Repository/RepositoryFactory.php" />
         <option value="$PROJECT_DIR$/config/autoload/global.php" />
         <option value="$PROJECT_DIR$/module/Application/config/module.config.php" />
+        <option value="$PROJECT_DIR$/specs/hydrator/order.spec.php" />
+        <option value="$PROJECT_DIR$/src/Persistence/Hydrator/OrderHydrator.php" />
       </list>
     </option>
   </component>
@@ -280,11 +280,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,15 +294,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
+              <option name="myItemId" value="Persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleanphp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleanphp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hydrator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleanphp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleanphp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="specs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleanphp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleanphp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="specs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hydrator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -320,7 +366,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/src/Application/Controller/InvoicesController.php&#10;custo&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/src/Application/Controller/CustomersController.php&#10;OrderCon&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/src/Application/Controller/OrdersController.php&#10;glo&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/config/autoload/global.php&#10;phpunit&#9;ACTION&#9;PhpUnitNewGroup&#10;ValidationEr&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/src/Application/View/Helper/ValidationErrors.php&#10;OrderH&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/src/Persistence/Hydrator/OrderHydrator.php&#10;module&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/config/module.config.php&#10;new.p&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/application/customers/new.phtml&#10;layout&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/layout/layout.phtml&#10;RepositoryInterfa&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/src/Domain/Repository/RepositoryInterface.php&#10;index.phtml&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/application/index/index.phtml&#10;module.con&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/config/module.config.php&#10;layout.&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/layout/layout.phtml" />
+    <property name="SearchEverywhereHistoryKey" value="OrderHydra&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/src/Persistence/Hydrator/OrderHydrator.php&#10;custo&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/src/Application/Controller/CustomersController.php&#10;OrderCon&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/src/Application/Controller/OrdersController.php&#10;glo&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/config/autoload/global.php&#10;phpunit&#9;ACTION&#9;PhpUnitNewGroup&#10;ValidationEr&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/src/Application/View/Helper/ValidationErrors.php&#10;OrderH&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/src/Persistence/Hydrator/OrderHydrator.php&#10;module&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/config/module.config.php&#10;new.p&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/application/customers/new.phtml&#10;layout&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/layout/layout.phtml&#10;RepositoryInterfa&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/src/Domain/Repository/RepositoryInterface.php&#10;index.phtml&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/application/index/index.phtml&#10;module.con&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/config/module.config.php&#10;layout.&#9;FILE&#9;file:///Users/francisc/Sites/cleanphp/module/Application/view/layout/layout.phtml" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -475,7 +521,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438286728290</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added Doctrine Repository in service config and controller config">
+      <created>1438290184575</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1438290184575</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -530,7 +582,8 @@
     <MESSAGE value="Completed invoicing system and the application" />
     <MESSAGE value="Started migration to Doctrine ORM,created abstract Doctrine Repository" />
     <MESSAGE value="Added Doctrine Repository Mapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Doctrine Repository Mapping" />
+    <MESSAGE value="Added Doctrine Repository in service config and controller config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Doctrine Repository in service config and controller config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -650,28 +703,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/specs/hydrator/order.spec.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/zendframework/zendframework/library/Zend/Stdlib/Hydrator/HydrationInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33546326">
           <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Persistence/Hydrator/OrderHydrator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#89#0#PHP" expanded="true" />
-            <element signature="e#141#186#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -700,23 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Persistence/Hydrator/Strategy/DateStrategy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Persistence/Hydrator/InvoiceHydrator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-          <folding>
-            <element signature="e#192#234#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,10 +966,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/config/module.config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5766773">
+        <state vertical-scroll-proportion="-15.041667">
           <caret line="159" column="70" selection-start-line="159" selection-start-column="70" selection-end-line="159" selection-end-column="70" />
           <folding>
             <element signature="e#329#391#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/specs/hydrator/order.spec.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.041666">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persistence/Hydrator/OrderHydrator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78434503">
+          <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
+          <folding>
+            <element signature="e#7#89#0#PHP" expanded="true" />
+            <element signature="e#141#186#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
