@@ -10,23 +10,24 @@
  * control, so do not include passwords or other sensitive information in this
  * file.
  */
-
-use Zend\Stdlib\Hydrator\ClassMethods;
 use CleanPhp\Invoicer\Persistence\Hydrator\OrderHydrator;
+use Zend\Stdlib\Hydrator\ClassMethods;
 
-return ['service_config' => [
-    'factories' => [
-        'OrderHydrator' => function ($sm) {
-            return new OrderHydrator(
-                new ClassMethods(), $sm->get('CustomerRepository')
-            );
-        },
-        'CustomerRepository' =>
-            'CleanPhp\Invoicer\Persistence\Doctrine\Repository\RepositoryFactory',
-        'InvoiceRepository' =>
-            'CleanPhp\Invoicer\Persistence\Doctrine\Repository\RepositoryFactory',
-        'OrderRepository' =>
-            'CleanPhp\Invoicer\Persistence\Doctrine\Repository\RepositoryFactory',
-    ]]
-];
+return [
+    'service_manager' => [
+        'factories' => [
+            'OrderHydrator' => function ($sm) {
+                return new OrderHydrator(
+                    new ClassMethods(),
+                    $sm->get('CustomerRepository'));
+            },
+            'CustomerRepository' =>
+                'CleanPhp\Invoicer\Persistence\Doctrine\Repository\RepositoryFactory',
+             'InvoiceRepository' =>
+                 'CleanPhp\Invoicer\Persistence\Doctrine\Repository\RepositoryFactory',
+             'OrderRepository' =>
+                 'CleanPhp\Invoicer\Persistence\Doctrine\Repository\RepositoryFactory',         ]
+     ],
+ ];
+
 

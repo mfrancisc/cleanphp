@@ -145,13 +145,6 @@ return array(
                     new ClassMethods()
                 );
             },
-            'Application\Controller\Orders' => function ($sm) {
-                return new \Application\Controller\OrdersController(
-                    $sm->getServiceLocator()->get('OrderRepository'),
-                    $sm->getServiceLocator()->get('CustomerRepository'),
-                    new OrderInputFilter(), $sm->getServiceLocator()->get('OrderHydrator')
-                );
-            },
             'Application\Controller\Invoices' => function ($sm) {
                 return new \Application\Controller\InvoicesController (
                     $sm->getServiceLocator()->get('InvoiceRepository'),
@@ -160,6 +153,13 @@ return array(
                         $sm->getServiceLocator()->get('OrderRepository'),
                         new InvoiceFactory())
 
+                );
+            },
+            'Application\Controller\Orders' => function ($sm) {
+                return new \Application\Controller\OrdersController(
+                    $sm->getServiceLocator()->get('OrderRepository'),
+                    $sm->getServiceLocator()->get('CustomerRepository'),
+                    new OrderInputFilter(), $sm->getServiceLocator()->get('OrderHydrator')
                 );
             },
         ),
