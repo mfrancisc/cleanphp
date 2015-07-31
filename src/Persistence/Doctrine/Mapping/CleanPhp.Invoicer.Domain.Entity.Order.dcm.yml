@@ -1,4 +1,3 @@
-This file, CleanPhp.Invoicer.Domain.Entity.Order.dcm.yml dictates mapping information for the Order entity:
 CleanPhp\Invoicer\Domain\Entity\Order:
   type: entity
   table: orders

@@ -1,4 +1,3 @@
-This file, CleanPhp.Invoicer.Domain.Entity.Invoice.dcm.yml dictates mapping information for the Invoice entity:
 CleanPhp\Invoicer\Domain\Entity\Invoice:
   type: entity
   table: invoices
